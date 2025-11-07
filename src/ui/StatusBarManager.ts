@@ -1,5 +1,4 @@
 import * as vscode from 'vscode';
-import { Project } from '../models';
 import { getProjectList } from '../utils/projectUtils';
 import { ProjectService } from '../services';
 

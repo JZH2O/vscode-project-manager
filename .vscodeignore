@@ -1,0 +1,68 @@
+# Build output
+dist/
+out/*.map
+out/**/*.map
+
+# Node modules - these are bundled or not needed at runtime
+node_modules/
+
+# Configuration files
+.nyc_output/
+coverage/
+.nyc_output/
+.coverage/
+.reports/
+
+# Source files - TypeScript source is not needed in the packaged extension
+src/
+**/*.ts
+**/*.tsx
+
+# Test files
+test/
+__tests__/
+**/*.test.js
+**/*.spec.js
+
+# Development files
+.git/
+.editorconfig
+.eslintrc.json
+.eslintignore
+.prettierrc.json
+.prettierignore
+.stylelintrc.json
+.stylelintignore
+*.log
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+.npmignore
+
+# Documentation
+*.md
+docs/
+**/docs/
+CHANGELOG.md
+README.md
+LICENSE
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+
+# IDE files
+.vscode/
+.idea/
+**/.DS_Store
+**/Thumbs.db
+
+# Build tools config
+webpack.config.js
+tsconfig.json
+gulpfile.js
+gruntfile.js
+
+# Ignore all files in the root except the necessary ones
+!package.json
+!icon.png
+!out/
+!out/**

@@ -29,7 +29,7 @@ This plugin has been optimized with a modular design, primarily consisting of th
 
 ## Configuration
 
-The extension uses a `work.code-workspace` file to manage projects. Here's an example configuration:
+The extension uses a `*.code-workspace` file to manage projects. Here's an example configuration:
 
 ```json
 {
@@ -68,15 +68,13 @@ The extension uses a `work.code-workspace` file to manage projects. Here's an ex
                 }
             ]
         }
-    },
-    "projectManager.workspacePath": "/root/work/workspace/work.code-workspace"
+    }
 }
 ```
 
 In this configuration:
 - `folders`: Standard VS Code workspace folders
 - `projectManager.projectList`: Custom project definitions that can be quickly switched to
-- `projectManager.workspacePath`: Path to the workspace file (optional)
 
 Each project in `projectManager.projectList` can define:
 - `description`: A description of the project

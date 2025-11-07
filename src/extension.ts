@@ -1,9 +1,7 @@
 import * as vscode from 'vscode';
-import { Project } from './models';
 import { ProjectService } from './services';
 import { StatusBarManager } from './ui';
 import { ProjectSelector } from './ui/ProjectSelector';
-import { getProjectList } from './utils/projectUtils';
 
 export function activate(context: vscode.ExtensionContext) {
     console.log('Project Workspace Manager 插件已激活');

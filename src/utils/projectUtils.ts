@@ -1,7 +1,6 @@
-import * as fs from 'fs';
 import * as vscode from 'vscode';
 import { Project } from '../models';
-import { getWorkspaceFilePath, readWorkspaceConfig } from './workspaceUtils';
+import { readWorkspaceConfig } from './workspaceUtils';
 
 /**
  * 从工作区文件获取项目列表

@@ -2,10 +2,11 @@
     "name": "project-workspace-manager",
     "displayName": "Project Workspace Manager",
     "description": "A VS Code extension for managing and switching between project workspaces, supporting multi-folder project configurations and automatic state saving/restoring.",
-    "version": "1.2.0",
+    "version": "1.2.1",
+    "icon": "icon.png",
     "repository": {
         "type": "git",
-        "url": "https://github.com/your-username/project-workspace-manager.git"
+        "url": "https://github.com/JZH2O/vscode-project-manager.git"
     },
     "publisher": "JZH2O",
     "engines": {
@@ -22,9 +23,9 @@
         "multi-root"
     ],
     "activationEvents": [
-        "workspaceContains:**/work.code-workspace"
+        "workspaceContains:**/*.code-workspace"
     ],
-    "main": "./dist/extension.js",
+    "main": "./out/extension.js",
     "capabilities": {
         "virtualWorkspaces": false
     },

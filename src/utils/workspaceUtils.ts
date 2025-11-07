@@ -1,27 +1,46 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as vscode from 'vscode';
-import { Project } from '../models';
 
-export const WORKSPACE_FILE = 'work.code-workspace';
 export const CURRENT_PROJECT_KEY = 'currentProject';
+
+/**
+ * 获取当前工作区的配置对象
+ * @returns 当前工作区的配置对象
+ */
+export function getCurrentWorkspaceConfig() {
+    // 首先检查是否打开了 .code-workspace 文件
+    const workspaceFile = vscode.workspace.workspaceFile?.path;
+    if (workspaceFile) {
+        return workspaceFile;
+    }
+    
+    // 方法1: 使用 VS Code API 获取当前工作区文件
+    const workspaceFolders = vscode.workspace.workspaceFolders;
+    if (workspaceFolders && workspaceFolders.length > 0) {
+        // 通常第一个文件夹是根目录
+        const rootPath = workspaceFolders[0].uri.path;
+        return rootPath;
+    }
+    return null;
+}
 
 /**
  * 获取工作区文件路径
  * @returns 工作区文件的完整路径
  */
 export function getWorkspaceFilePath(): string {
-    // 从配置中获取工作区文件路径
-    const config = vscode.workspace.getConfiguration('projectManager');
-    const workspacePath: string = config.get('workspacePath', '');
-    
-    // 如果配置了路径且不为空，则使用配置的路径
-    if (workspacePath && workspacePath.trim() !== '') {
-        return workspacePath.trim();
+
+    // 获取当前工作区配置
+    const workspaceConfig = getCurrentWorkspaceConfig();
+    // 如果工作区配置中包含了路径，则在该路径下查找.code-workspace文件
+    if (workspaceConfig) {
+        // 如果未找到实际的.code-workspace文件，回退到原来的逻辑
+        return path.join(workspaceConfig);
     }
     
-    // 否则使用默认路径
-    return path.join(vscode.workspace.rootPath || '', WORKSPACE_FILE);
+    // 如果仍然没有工作区文件夹，返回空字符串或抛出错误
+    throw new Error('无法确定工作区根路径，当前未打开任何工作区');
 }
 
 /**

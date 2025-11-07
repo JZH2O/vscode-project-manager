@@ -1,11 +1,9 @@
-import * as fs from 'fs';
 import * as vscode from 'vscode';
 import { Project } from '../models';
 import { 
     getWorkspaceFilePath, 
     readWorkspaceConfig, 
     writeWorkspaceConfig,
-    WORKSPACE_FILE,
     CURRENT_PROJECT_KEY
 } from '../utils';
 import { getProjectFolders } from '../utils/projectUtils';

@@ -1,14 +1,13 @@
 # Changelog
 
-## [1.1.0] - 2024-11-03
+## [1.2.1] - 2025-11-04
 
-### Changed
+### Fixed
 
-- Changed project list storage from global settings to work.code-workspace file
-- Added support for project group management
-- Removed projectManager.projectList configuration item
+- Modified workspaceUtils.ts to dynamically find actual .code-workspace files instead of using fixed filename
+- Improved workspace file detection logic to search for any .code-workspace file in the workspace directory
 
-## [1.2.0] - 2024-11-03
+## [1.2.0] - 2025-11-03
 
 ### Added
 
@@ -20,6 +19,14 @@
 
 - Preserved existing folders configuration in work.code-workspace file
 - Optimized project selection and opening logic to support multi-folder projects
+
+## [1.1.0] - 2025-11-03
+
+### Changed
+
+- Changed project list storage from global settings to work.code-workspace file
+- Added support for project group management
+- Removed projectManager.projectList configuration item
 
 ## 1.0.0
 
